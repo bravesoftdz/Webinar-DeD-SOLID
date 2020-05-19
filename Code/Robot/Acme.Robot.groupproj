@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2330A0C1-EEB1-4FD2-A3A1-7EABED0C6E23}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Acme.Robot.Core\Acme.Robot.Core.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Acme.Robot.GUI.Console\Acme.Robot.GUI.Console.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Acme.Robot.GUI.VCL\Acme.Robot.GUI.VCL.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Acme_Robot_Core">
+        <MSBuild Projects="Acme.Robot.Core\Acme.Robot.Core.dproj"/>
+    </Target>
+    <Target Name="Acme_Robot_Core:Clean">
+        <MSBuild Projects="Acme.Robot.Core\Acme.Robot.Core.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Acme_Robot_Core:Make">
+        <MSBuild Projects="Acme.Robot.Core\Acme.Robot.Core.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Acme_Robot_GUI_Console">
+        <MSBuild Projects="Acme.Robot.GUI.Console\Acme.Robot.GUI.Console.dproj"/>
+    </Target>
+    <Target Name="Acme_Robot_GUI_Console:Clean">
+        <MSBuild Projects="Acme.Robot.GUI.Console\Acme.Robot.GUI.Console.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Acme_Robot_GUI_Console:Make">
+        <MSBuild Projects="Acme.Robot.GUI.Console\Acme.Robot.GUI.Console.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Acme_Robot_GUI_VCL">
+        <MSBuild Projects="Acme.Robot.GUI.VCL\Acme.Robot.GUI.VCL.dproj"/>
+    </Target>
+    <Target Name="Acme_Robot_GUI_VCL:Clean">
+        <MSBuild Projects="Acme.Robot.GUI.VCL\Acme.Robot.GUI.VCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Acme_Robot_GUI_VCL:Make">
+        <MSBuild Projects="Acme.Robot.GUI.VCL\Acme.Robot.GUI.VCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Acme_Robot_Core;Acme_Robot_GUI_Console;Acme_Robot_GUI_VCL"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Acme_Robot_Core:Clean;Acme_Robot_GUI_Console:Clean;Acme_Robot_GUI_VCL:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Acme_Robot_Core:Make;Acme_Robot_GUI_Console:Make;Acme_Robot_GUI_VCL:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

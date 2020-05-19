@@ -1,0 +1,50 @@
+package Solid.Samples;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl;
+
+contains
+  Solid.Samples.SRP.BookWrong in 'SRP\Solid.Samples.SRP.BookWrong.pas',
+  Solid.Samples.SRP.BookRight in 'SRP\Solid.Samples.SRP.BookRight.pas',
+  Solid.Samples.OCP.Streaming.Wrong in 'OCP\Solid.Samples.OCP.Streaming.Wrong.pas',
+  Solid.Samples.OCP.Streaming.Ok in 'OCP\Solid.Samples.OCP.Streaming.Ok.pas',
+  Solid.Samples.OCP.Book.Ok in 'OCP\Solid.Samples.OCP.Book.Ok.pas',
+  Solid.Samples.OCP.Book.Wrong in 'OCP\Solid.Samples.OCP.Book.Wrong.pas',
+  Solid.Samples.LSP.Animals.Wrong in 'LSP\Solid.Samples.LSP.Animals.Wrong.pas',
+  Solid.Samples.LSP.Shapes.Wrong in 'LSP\Solid.Samples.LSP.Shapes.Wrong.pas',
+  Solid.Samples.LSP.Shapes.Workaround in 'LSP\Solid.Samples.LSP.Shapes.Workaround.pas',
+  Solid.Samples.ISP.Office.Wrong in 'ISP\Solid.Samples.ISP.Office.Wrong.pas',
+  Solid.Samples.ISP.Office.Ok in 'ISP\Solid.Samples.ISP.Office.Ok.pas',
+  Solid.Samples.DIP.Books.Step1 in 'DIP\Solid.Samples.DIP.Books.Step1.pas',
+  Solid.Samples.DIP.Books.Step2 in 'DIP\Solid.Samples.DIP.Books.Step2.pas',
+  Solid.Samples.DIP.Books.Step3 in 'DIP\Solid.Samples.DIP.Books.Step3.pas';
+
+end.
